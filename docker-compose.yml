@@ -1,0 +1,15 @@
+# The clades service wraps the JSON CLI: pipe a request document on stdin,
+# read the consensus report on stdout.
+#
+#   docker compose build clades
+#   docker compose run --rm -T clades < examples/input.json
+#
+# (-T disables the pseudo-TTY so stdin/stdout stay plain pipes.)
+services:
+  clades:
+    build: .
+    image: weighted-clade-consensus-builder:latest
+    stdin_open: true
+    tty: false
+    read_only: true
+    network_mode: none
