@@ -1,0 +1,12 @@
+[package]
+name = "clades"
+version = "0.1.0"
+edition = "2021"
+description = "Weighted greedy consensus for rooted binary phylogenetic trees"
+
+[[bin]]
+name = "clades"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
